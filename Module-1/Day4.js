@@ -47,19 +47,57 @@
 // console.log("500 * 500: ", resultOfSquareOfFiveHundred)
 
 //Define a function with 0 parameters
-const makeNoise = function(){
-    console.log('Bark')
-}
-makeNoise()
+// const makeNoise = function(){
+//     console.log('Bark')
+// }
+// makeNoise()
 
-//with parameters
-const makeNoiseWithParameter = function(noise){
-    console.log(noise)
-}
-makeNoiseWithParameter("Meow")
+// //with parameters
+// const makeNoiseWithParameter = function(noise){
+//     console.log(noise)
+// }
+// makeNoiseWithParameter("Meow")
 
-//function with many parameters
-const sum = function(a, b){
-    return a + b
+// //function with many parameters
+// const sum = function(a, b){
+//     return a + b
+// }
+// console.log(sum(1,2))
+
+//SCOPES
+//every time a function is called, it creates a new scope
+
+let x = 10 //if I declare a variable outside, it will still be available imside
+if(true){
+    let y = 20 //if you declare inside, it cannot be accessed outside. it only leaves in theis scope
+    let z = 30
+    console.log(x+y+z)
 }
-console.log(sum(1,2))
+
+//OTHER DECLARATIONS
+//Different ways to define functions
+
+const sum = function(a,b){ //using function like a objects/variable(container) and declaring properties
+    let localSum = a - b
+    return localSum
+}
+
+function sum2(a, b){
+    let localSum = a-b
+    return localSum
+}
+
+let launchMissiles = function(){
+    console.log("Rocket launched")
+}
+if(safeMode){
+    launchMissiles = function(){
+
+    }
+}
+
+const square = x => { //arrow function notation
+
+}
+
+const square = x => x * x
