@@ -44,8 +44,11 @@
     <div class="demo">Access me by class (2)</div>
 
     <h2>Tag (article)</h2>
+    <div id="articleContainer">
     <article>Access me by tag (1)</article>
     <article>Access me by tag (2)</article>
+  </div>
+  <input type="button" onclick="createArticle()" value="CREATE" />
 
     <h2>Query Selector</h2>
     <div id="demo-query">Access me by query</div>
@@ -84,6 +87,10 @@
       let demo2 = demo.cloneNode(true);
       let body = document.querySelector("#democontainer");
       body.appendChild(demo2);
+
+      }
+      function createArticle(){
+        let random = 
       }
     </script>
   </body>

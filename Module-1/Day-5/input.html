@@ -36,10 +36,15 @@
       function getUserData(){
         let name = document.querySelector("#name").value;
         let email = document.querySelector("#email").value;
+        if (name && email.includes("@")){
         console.log("name is:", name);
         console.log("email is:", email);
+        let userDiv = document.createElement("div")
+        userDiv.innerText = "You input " + name + " and " + email
+        document.querySelector("body").appendChild(userDiv)
         document.querySelector("#name").value = "";
         document.querySelector("#email").value = "";
+      }
       }
     </script>
   </body>
