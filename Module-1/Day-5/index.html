@@ -25,6 +25,9 @@
       .newClass{
         font-size: 30px;
       }
+      .genericClass {
+        background-color: blue;
+      }
     </style>
   </head>
 
@@ -32,11 +35,12 @@
     <h1>Accessing Elements in the DOM</h1>
 
     <h2>ID (#demo)</h2>
-    <div id="democontainer"></div>
+    <div id="demoContainer">
     <div id="demo">
       <p>Access me by ID</p>
     </div>
-    <input type="button" value="REPLICATE" onclick="replicate()" />
+    </div>
+    <input type="button" onclick="replicate()" value="REPLICATE"  />
     <h2>Class (.demo)</h2>
     <div class="demo">
       Access me by class (1)
@@ -73,11 +77,11 @@
     </div>
     <a href="/inputs.html"> GO TO INPUTS</a>
     <script>
-      window.onload = function consoleMe(){
+      window.onload = function () {
       let demoParagraph = document.querySelector("#demo p");
-      console.log(document.querySelector("#demo"));
+      console.log(demoParagraph);
       demoParagraph.innerText = "the text has changed";
-      document.querySelector("#demo p").innerText = "Change again!!";
+      document.querySelector("#demo p").innerText = "Changed again!!";
       demoParagraph.style.color = "red";
       demoParagraph.classList.add("newClass");
       demoParagraph.classList.remove("newClass");
@@ -85,12 +89,20 @@
       function replicate(){
       let demo = document.querySelector("#demo");
       let demo2 = demo.cloneNode(true);
-      let body = document.querySelector("#democontainer");
-      body.appendChild(demo2);
+      let demoContainer = document.querySelector("#democontainer");
+      demoContainer.appendChild(demo2);
 
       }
       function createArticle(){
-        let random = 
+        let random = Math.random() * 11 /*create a random number and multiple it by 11*/
+        random = Math.floor(random)//ceiling using number multipied with above
+        let myNewArticle = document.createElement("article") //create a new article
+        myNewArticle.innerText = "I've been created from scratch" + random //assign value to new article
+        myNewArticle.style.color = "red" //style text
+        myNewArticle.classList.add("genericClass") //assign a classname
+        //element is created but needs to be attached somewhere in dom
+        let parent = document.querySelector("#articleContainer")//select a place to attach
+        parent.appendChild(myNewArticle)//and attach new article
       }
     </script>
   </body>
