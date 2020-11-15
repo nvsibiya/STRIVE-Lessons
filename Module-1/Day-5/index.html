@@ -100,7 +100,7 @@
         myNewArticle.innerText = "I've been created from scratch" + random //assign value to new article
         myNewArticle.style.color = "red" //style text
         myNewArticle.classList.add("genericClass") //assign a classname
-        myNewArticle.onclick = function() {
+        myNewArticle.onclick = function(e) {
           console.log("you clicked me!!")
           console.log("Event Info", e)
         }
