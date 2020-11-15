@@ -100,6 +100,10 @@
         myNewArticle.innerText = "I've been created from scratch" + random //assign value to new article
         myNewArticle.style.color = "red" //style text
         myNewArticle.classList.add("genericClass") //assign a classname
+        myNewArticle.onclick = function() {
+          console.log("you clicked me!!")
+          console.log("Event Info", e)
+        }
         //element is created but needs to be attached somewhere in dom
         let parent = document.querySelector("#articleContainer")//select a place to attach
         parent.appendChild(myNewArticle)//and attach new article
